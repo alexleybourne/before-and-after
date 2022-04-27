@@ -48,19 +48,25 @@ nav {
             height: 40px;
             width: 40px;
             border-radius: 5px;
-            transition-delay: 0.4s;
-            transition-duration: 0.4s;
             transform: rotate(0deg);
-            background-image: linear-gradient($brand-color, $brand-color-2);
+            overflow: hidden;
     
-            .inside-logo {
+            .logo-inside {
                 @extend .flex;
+                z-index: 2;
                 width: 16px;
                 height: 30px;
                 border-radius: 4px;
                 transform: translateX(7px);
-                transition-duration: 0.4s;
                 background-color: $dark;
+            }
+
+            .logo-bg {
+                height: 50px;
+                width: 50px;
+                position: absolute;
+                z-index: 1;
+                background-image: linear-gradient($brand-color, $brand-color-2);
             }
     
         }
@@ -68,11 +74,20 @@ nav {
         &:hover {
 
             .logo {
+                transition-delay: 0.4s;
+                transition-duration: 0.4s;
                 transform: rotate(180deg);
             }
 
-            .inside-logo {
+            .logo-inside {
+                transition-duration: 0.4s;
                 transform: translateX(-7px);
+            }
+
+            .logo-bg {
+                transition-delay: 0.4s;
+                transition-duration: 0.4s;
+                transform: rotate(180deg);
             }
         }
 
